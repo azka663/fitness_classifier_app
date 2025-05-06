@@ -9,7 +9,7 @@ import gdown
 model_path = "fitness_model_3class.h5"
 if not os.path.exists(model_path):
     # Corrected URL format for gdown
-    url = "https://drive.google.com/uc?export=download&id=1N2mqDCcjQSiug08ODrFgTLknBvfq523F"
+    url = "https://drive.google.com/file/d/1N2mqDCcjQSiug08ODrFgTLknBvfq523F/view?usp=share_link"
     gdown.download(url, model_path, quiet=False)
 
 # Load the model
