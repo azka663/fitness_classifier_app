@@ -10,7 +10,7 @@ import os
 import gdown
 
 # Automatically download the model if not present
-model_path = "fitness_model_3class.h5"
+model_path = "https://drive.google.com/file/d/1KLcdAgZ7lUqI0HZpl89FbeBtUU-VWAsr/view?usp=share_link"
 if not os.path.exists(model_path):
     # Corrected URL format for gdown
     url = "https://drive.google.com/uc?id=1KLcdAgZ7lUqI0HZpl89FbeBtUU-VWAsr"
@@ -18,8 +18,7 @@ if not os.path.exists(model_path):
     
 from tensorflow.keras.models import load_model
 model = load_model(model_path)
-# Load the model
-model = load_model("fitness_model_3class.h5")
+
 
 # Define class labels
 labels = ["Fit ", "Overweight ", "Underweight "]
