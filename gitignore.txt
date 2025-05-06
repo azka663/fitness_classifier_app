@@ -1,0 +1,5 @@
+# Ignore model file and dataset
+*.h5
+dataset/
+*.zip
+__pycache__/
