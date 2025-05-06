@@ -5,6 +5,9 @@ from PIL import Image
 import os
 import requests
 
+# Set the page configuration first
+st.set_page_config(page_title="Body Fitness Image Classifier", layout="centered")
+
 # Dropbox public URL for the model
 model_filename = "fitness_model_3class.h5"
 model_url = "https://www.dropbox.com/scl/fi/srglh38vvsekz7asxl3ur/fitness_model_3class.h5?rlkey=45n06xzy5au2q8hjw7ksv7pa9&st=11sd0sye&dl=1"  # Replace with your Dropbox link
@@ -33,8 +36,7 @@ except Exception as e:
 # Define class labels
 labels = ["Fit", "Overweight", "Underweight"]
 
-# Page title
-st.set_page_config(page_title="Body Fitness Image Classifier", layout="centered")
+# Page title and instructions
 st.markdown("<h1 style='text-align: center;'>Body Fitness Classifier</h1>", unsafe_allow_html=True)
 st.markdown("<h4 style='text-align: center;'>Upload a body image to classify as Fit, Overweight, or Underweight</h4>", unsafe_allow_html=True)
 st.markdown("---")
