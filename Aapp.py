@@ -4,6 +4,7 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 import os
 import gdown
+import h5py
 
 # Automatically download the model if not present
 model_path = "fitness_model_3class.h5"
