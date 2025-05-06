@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 import os
 import gdown
-
+os.makedirs(os.path.dirname(model_path) or ".", exist_ok=True)
 # Automatically download the model if not present
 model_path = "https://drive.google.com/file/d/1KLcdAgZ7lUqI0HZpl89FbeBtUU-VWAsr/view?usp=share_link"
 if not os.path.exists(model_path):
