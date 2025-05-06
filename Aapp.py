@@ -3,17 +3,21 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from PIL import Image
 import os
-import gdown
+import requests
 
-# Automatically download the model if not present
+# Dropbox public URL for the model
 model_filename = "fitness_model_3class.h5"
-model_url = "https://drive.google.com/uc?id=1KLcdAgZ7lUqI0HZpl89FbeBtUU-VWAsr"
+model_url = "https://www.dropbox.com/scl/fi/srglh38vvsekz7asxl3ur/fitness_model_3class.h5?rlkey=45n06xzy5au2q8hjw7ksv7pa9&st=11sd0sye&dl=1"  # Replace with your Dropbox link
 
 # Check if model file exists, if not, download it
 if not os.path.exists(model_filename):
     st.write("Model not found. Downloading...")
     try:
-        gdown.download(model_url, model_filename, quiet=False)
+        # Download the model using requests
+        r = requests.get(model_url, allow_redirects=True)
+        with open(model_filename, 'wb') as f:
+            f.write(r.content)
+        st.write("Model downloaded successfully!")
     except Exception as e:
         st.error(f"Error downloading the model: {e}")
         st.stop()
