@@ -12,13 +12,13 @@ import gdown
 model_filename = "fitness_model_3class.h5"
 os.makedirs(os.path.dirname(model_filename) or ".", exist_ok=True)
 model_path = "https://drive.google.com/file/d/1KLcdAgZ7lUqI0HZpl89FbeBtUU-VWAsr/view?usp=share_link"
-if not os.path.exists(model_path):
+if not os.path.exists(model_filename):
     # Corrected URL format for gdown
     url = "https://drive.google.com/uc?id=1KLcdAgZ7lUqI0HZpl89FbeBtUU-VWAsr"
     gdown.download(url, model_path, quiet=False)
     
 from tensorflow.keras.models import load_model
-model = load_model(model_path)
+model = load_model(model_filename)
 
 
 # Define class labels
