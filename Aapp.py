@@ -4,21 +4,19 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 import os
 import gdown
-import h5py
 
 # Automatically download the model if not present
 model_path = "fitness_model_3class.h5"
 if not os.path.exists(model_path):
-    url = "https://drive.google.com/file/d/1N2mqDCcjQSiug08ODrFgTLknBvfq523F/view?usp=share_link"
+    # Corrected URL format for gdown
+    url = "https://drive.google.com/uc?export=download&id=1N2mqDCcjQSiug08ODrFgTLknBvfq523F"
     gdown.download(url, model_path, quiet=False)
 
-from tensorflow.keras.models import load_model
-model = load_model(model_path)
 # Load the model
-model = load_model("fitness_model_3class.h5")
+model = load_model(model_path)
 
 # Define class labels
-labels = ["Fit ", "Overweight ", "Underweight "]
+labels = ["Fit", "Overweight", "Underweight"]
 
 # Page title
 st.set_page_config(page_title="Body Fitness Image Classifier", layout="centered")
@@ -32,7 +30,7 @@ uploaded_file = st.file_uploader("📁 Upload an image", type=["jpg", "jpeg", "p
 if uploaded_file is not None:
     # Display uploaded image
     image = Image.open(uploaded_file).convert("RGB")
-    st.image(image, caption=" Uploaded Image", use_column_width=True)
+    st.image(image, caption="Uploaded Image", use_column_width=True)
 
     # Preprocess the image
     img = image.resize((150, 150))
@@ -47,4 +45,4 @@ if uploaded_file is not None:
     # Display result
     st.markdown("---")
     st.markdown(f"<h3 style='text-align: center;'>Prediction: <span style='color:#4CAF50;'>{labels[predicted_index]}</span></h3>", unsafe_allow_html=True)
-    st.markdown(f"<h4 style='text-align: center;'> Confidence Score: {confidence:.2f}</h4>", unsafe_allow_html=True)
+    st.markdown(f"<h4 style='text-align: center;'>Confidence Score: {confidence:.2f}</h4>", unsafe_allow_html=True)
