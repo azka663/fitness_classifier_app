@@ -10,7 +10,7 @@ st.set_page_config(page_title="Body Fitness Image Classifier", layout="centered"
 
 # Dropbox public URL for the model
 model_filename = "fitness_model_3class.h5"
-model_url = "https://www.dropbox.com/scl/fi/srglh38vvsekz7asxl3ur/fitness_model_3class.h5?rlkey=45n06xzy5au2q8hjw7ksv7pa9&st=11sd0sye&dl=1"  # Replace with your Dropbox link
+model_url = "https://www.dropbox.com/scl/fi/srglh38vvsekz7asxl3ur/fitness_model_3class.h5?rlkey=45n06xzy5au2q8hjw7ksv7pa9&st=11sd0sye&dl=1" # Replace with your Dropbox link
 
 # Check if model file exists, if not, download it
 if not os.path.exists(model_filename):
