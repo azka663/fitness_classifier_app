@@ -9,7 +9,7 @@ This Streamlit app classifies body images into Fit 🏋️‍♀️, Overweight 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/sadia663/fitness_classifier_app.git
+git clone https://github.com/azka663/fitness_classifier_app.git
 cd fitness_classifier_app
 
 
